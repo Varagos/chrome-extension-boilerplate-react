@@ -5,7 +5,7 @@ import Greetings from '../../containers/Greetings/Greetings';
 import './Popup.css';
 
 async function lucidConnect() {
-  const projectId = 'YOUR_PROJECT_ID_HERE'; // Replace with your Project ID
+  const projectId = 'previewsKVSTHsY3c2sWpsRpJRjs9KiOLaSRmht';
   const lucid = await Lucid.new(
     new Blockfrost('https://cardano-preview.blockfrost.io/api/v0', projectId),
     'Preview'
