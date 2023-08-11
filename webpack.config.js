@@ -126,6 +126,11 @@ var options = {
       },
     ],
   },
+  experiments: {
+    asyncWebAssembly: true,
+    topLevelAwait: true,
+    layers: true // optional, with some bundlers/frameworks it doesn't work without
+  },
   resolve: {
     alias: alias,
     extensions: fileExtensions
@@ -214,6 +219,9 @@ var options = {
       chunks: ['panel'],
       cache: false,
     }),
+    new webpack.DefinePlugin({
+      global: {}
+    })
   ].filter(Boolean),
   infrastructureLogging: {
     level: 'info',

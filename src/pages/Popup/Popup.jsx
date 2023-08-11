@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../assets/img/logo.svg';
+import { Lucid, Blockfrost } from 'lucid-cardano';
 import Greetings from '../../containers/Greetings/Greetings';
 import './Popup.css';
 
+async function lucidConnect() {
+  const projectId = 'YOUR_PROJECT_ID_HERE'; // Replace with your Project ID
+  const lucid = await Lucid.new(
+    new Blockfrost('https://cardano-preview.blockfrost.io/api/v0', projectId),
+    'Preview'
+  );
+  console.log('Lucid', lucid);
+}
+
 const Popup = () => {
+  useEffect(() => {
+    console.log('Popup mounted');
+    lucidConnect();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
